@@ -24,7 +24,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
     return filterImageFromURL(image_url).then((filteredImagePath) => {//2. call filterImageFromURL(image_url) to filter the image
       let filesArray: string[] = [filteredImagePath];
       res.status(200).sendFile(filteredImagePath);//3. send the resulting file in the response
-      setTimeout(() => deleteLocalFiles(filesArray), 0);//4. deletes any files on the server on finish of the response
+      setTimeout(() => deleteLocalFiles(filesArray), 1000);//4. deletes any files on the server on finish of the response
     });
   });
   // Root Endpoint
